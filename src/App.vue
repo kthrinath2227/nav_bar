@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <div class="row">
-    <div :class="'col-lg-7 col-md-10 col-sm-12'">
+    <div class="col-lg-7 col-md-10 col-sm-12">
       <div class="bg-container">
           <div class="container">
             <div class="white-bg-container">
@@ -13,17 +13,13 @@
               <img class="icon"  alt="Icon" src="../src/assets/reset-password.svg" />
             </div>       
             <div>
-              <input id="input_1" class="input" type="password" placeholder="Enter Password" />
-               <br>
-              <label for="input_1" >{{ text_1 }}</label>
-              <br>
-              <input id="input_2" class="input" type="password" placeholder="Conform Password" />
+              <input id="input_1" class="input" type="password" placeholder="Enter Password" required />
               <br/>
-              <label for="input_2" >{{ text_2 }}</label>
+              <input id="input_2" class="input" type="password" placeholder="Conform Password" required />
               <br/>
-              <button class="input but">{{ btn }}</button>
+              <button type="submit" class="input but">{{ btn }}</button>
              <br/>
-              <a>{{ text_3 }}</a>
+              <a id="txt">{{ text_3 }}</a>
               
             </div> 
           </div>
@@ -43,9 +39,7 @@
 export default {
   data() {
     return {
-      btn:'Set NewPassword',
-      text_1:'Password Strenth',
-      text_2:'',
+      btn:'Set New Password',
       text_3:'< Back to Login'
     }
   }
@@ -59,57 +53,55 @@ export default {
   padding:0px;
   margin:0px;
   color:white;
+  font-size: 2vh;
 }
+::placeholder {
+  font-size:1.5vh;
+}
+
 .row {
   display: flex;
   justify-content: center;
 }
 .container {
-  height:100vh;
-  width:auto;
+  height:98vh;
+  width:100vw;
+
 
 }
 .bg-container {
   background-image: url('../src/assets/Artboard 1.png');
-  background-color: rgba(15,7,128,0.973);
+  background-color: rgba(14, 14, 41, 0.973);
   background-size: cover;
   width:100%;
+  background-repeat: no-repeat;
   background-position: top;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-@media (max-width: 1000px) {
+  background-size: 100% 100%;
 
-.bg-container {
+}
 
-  background-size: 1000px px; /* Force the image to its minimum width */
-}
-}
 .white-bg-container {
   background-image: url('../src/assets/Path 34333.svg');
-  background-size: cover;
-  height: 10;
-  width: 100%;
   background-position: top;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding:5px;
+  background-repeat: no-repeat;
+  width:100%;
+  height:7%;
+  text-align: center;
+  background-size:cover;
+  
 }
 
 .logo {
-  width:20vw;
-  height:;
-  margin: 5px;
+  width:40%;
+  height:100%;
+ 
 }
 .login-container {
   display: flex;
   justify-content:center;
   text-align: center;
   margin-bottom: auto;
-  margin-top:20vh;
+  margin-top:17vh;
   font-size:1.5vw;
 }
 @media (max-width:200px) {
@@ -118,28 +110,28 @@ export default {
   }
 }
 .icon {
-  width:9vw;
-  height:5vh;
-  margin: 10px;
+  width:10vw;
+  height:8vh;
+  margin: 5px;
 }
-.icon-container {
-  display: flex;
-  flex-direction: column;
-  
-   
-}
+
 .input {
   border-radius: 20px;
   border-width: 0px;
   padding:10px;
   height:5vh;
-  width:45vw;
- 
+  width:40vw;
   font-weight: 500;
   color:rgb(0, 255, 42);
   margin:10px;
 }
 .but {
   background-color:blue;
+  font-size:1.5vh;
+  color:white;
+  padding:5px;
+}
+#txt {
+  font-size:1.5vh;
 }
 </style>
